@@ -6,6 +6,7 @@ def scraper
     url = 'https://www.indeed.com/jobs?q=software+developer&l=Remote'
     unparsed_page = HTTParty.get(url)
     parsed_page = Nokogiri::HTML(unparsed_page)
+    jobs = Array.new
     job_listings = parsed_page.css('div.jobsearch-SerpJobCard') #15 jobs on first page
     job_listings.each do |job_listing|
         job = {
@@ -14,8 +15,9 @@ def scraper
             location: job_listing.css('span.location').text,
             url: "https://indeed.com" + job_listing.css('a')[0].attributes["href"].value
         }
-        byebug
+        jobs << job
     end
+    byebug
 end
 
 scraper
