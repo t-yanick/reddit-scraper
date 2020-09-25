@@ -16,7 +16,7 @@ class Scraper
 
     public
 
-    def scraper
+    def scraper (arr)
         url = 'https://www.indeed.com/jobs?q=software+developer&l=Remote'
         unparsed_page = HTTParty.get(url)
         parsed_page = Nokogiri::HTML(unparsed_page)
@@ -28,7 +28,7 @@ class Scraper
         last_page = (total.to_f / per_page.to_f ).round #432
         while page <= last_page
             pagination_url = "https://www.indeed.com/jobs?q=software+developer&l=Remote&start=#{page}"
-            puts pagination_url
+            puts pagination_url 
             puts "Page: #{page}"
             puts ''
             pagination_unparsed_page = HTTParty.get(pagination_url)
@@ -41,8 +41,14 @@ class Scraper
                     location: job_listing.css('span.location').text,
                     url: "https://indeed.com" + job_listing.css('a')[0].attributes["href"].value
                 }
+                if arr.all? { |x| job[:title].downcase.split?(x) }
+                    @titles <<(@job[:title])
+                    @company <<(@job[:company])
+                    @locations <<(@job[:location])
+                    @urls <<(@job[:url])
+                end
                 jobs << job
-                puts "Added #{job(title)}"
+                puts "Added #{job}"
                 puts ""
             end
             page += 1
@@ -53,4 +59,4 @@ class Scraper
     #scraper
 end
 
-
+scraper
