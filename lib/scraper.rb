@@ -14,6 +14,9 @@ def scraper
     last_page = (total.to_f / per_page.to_f ).round #432
     while page <= last_page
         pagination_url = "https://www.indeed.com/jobs?q=software+developer&l=Remote&start=#{page}"
+        puts pagination_url
+        puts "Page: #{page}"
+        puts ''
         pagination_unparsed_page = HTTParty.get(pagination_url)
         pagination_parsed_page = Nokogiri::HTML(pagination_unparsed_page)
         pagination_job_listings = pagination_parsed_page.css('div.jobsearch-SerpJobCard')
@@ -25,8 +28,10 @@ def scraper
                 url: "https://indeed.com" + job_listing.css('a')[0].attributes["href"].value
             }
             jobs << job
+            puts "Added #{job(title)}"
+            puts ""
         end
-        page +=
+        page += 1
     end
     byebug
 end
