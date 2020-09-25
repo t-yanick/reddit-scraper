@@ -4,6 +4,17 @@ require 'nokogiri'
 
 class Scraper
     attr_reader :job, :jobs, :total, :page, :titles, :company, :locations, :urls, :parsed_page, :pagination 
+    
+    private
+
+    def initialize
+        @titles = []
+        @company = []
+        @locations =[]
+        @urls = []
+    end
+
+    public
 
     def scraper
         url = 'https://www.indeed.com/jobs?q=software+developer&l=Remote'
