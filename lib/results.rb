@@ -23,4 +23,13 @@ class Results
     end
   end
 
+  def end_html
+    File.open('./html/end.txt').each do |line|
+      @file.puts line
+    end
+  end
+
+  def close_file
+    @file.close
+  end
 end
