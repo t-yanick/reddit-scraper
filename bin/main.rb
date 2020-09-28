@@ -24,13 +24,11 @@ scraping = Scraper.new
 scraping.scraper(@array)
 
 save = Results.new(@array)
-# save = Results.new(scraping.scraper(@array))
 save.begin_html
 save.store(scraping.titles, scraping.company, scraping.locations, scraping.urls)
 save.end_html
 save.close_file
 
-# puts "Jobs found for the position #{@array.join(' ')} are #{scraping.titles.count}"
 puts "#{scraping.titles.count} remote jobs have been found for the position of #{@array.join(' ')}"
 puts 'Find a file of your search results in :'
 puts "remote_jobs/job_listing_for_#{@array.join('_')}"
