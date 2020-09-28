@@ -15,7 +15,6 @@ require 'nokogiri'
 class Scraper
   attr_reader :job, :jobs, :total, :page, :titles, :company, :locations, :urls, :parsed_page, :pagination
 
-  private
 
   def initialize
     @titles = []
