@@ -53,7 +53,7 @@ Web Scraping (also termed Screen Scraping, Web Data Extraction, Web Harvesting e
 
 ## Running tests with Rspec
 
-This game was tested with Rspec wich is a computer domain-specific language (DSL) testing tool written in programming language Ruby to test Ruby code. It is a behavior-driven development (BDD) framework which is extensively used in production applications.
+This scraper was tested with Rspec wich is a computer domain-specific language (DSL) testing tool written in programming language Ruby to test Ruby code. It is a behavior-driven development (BDD) framework which is extensively used in production applications.
 
 ## How to get Rspec running
 
