@@ -1,7 +1,5 @@
 # rubocop : disable Layout/LineLength
 
-# frozen_string_literal: true
-
 require_relative '../lib/scraper'
 
 describe Scraper do

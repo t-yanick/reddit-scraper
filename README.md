@@ -32,13 +32,19 @@ Web Scraping (also termed Screen Scraping, Web Data Extraction, Web Harvesting e
 
 ![screenshot](images/screenshot_2.png)
 
-- As it searches the pages of the website, you will see the results displaying
+- At the end of the search, a message will display on the terminal telling you:
+> - The number of remote jobs for the position you searched for.
+> - A path where you can find the HTML results of your search
 
 ![screenshot](images/screenshot_3.png)
 
 ### Screenshot of the code
 
 ![screenshot](images/screenshot_4.png)
+
+### Screenshot of the search
+
+![screenshot](images/result.png)
 
 ### Built With
 - Ruby 2.6.5p114 (2019-10-01 revision 67812) [x86_64-darwin18]
@@ -58,7 +64,7 @@ This game was tested with Rspec wich is a computer domain-specific language (DSL
 - In the terminal, type `rspec`
 
 ## Rspec output
-![screenshot 1](./images/01.png)
+![screenshot 1](./images/02.png)
 
 ### Authors
 👤 **Tazoh Yanick**
