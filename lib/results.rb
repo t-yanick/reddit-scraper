@@ -2,7 +2,6 @@
 
 # rubocop : disable Style/Documentation
 
-
 class Results
   attr_accessor :file
 
