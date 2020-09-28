@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 class Results
-  attr_reader :file
+  attr_accessor :file
 
   def initialize(arr)
-    prefix = '.remote_jobs/job_listing_for_'
+    prefix = './remote_jobs/job_listing_for_'
     @file = File.open(prefix + "#{arr[0]}.html", 'w+')
   end
 
@@ -14,7 +14,7 @@ class Results
     end
   end
 
-  def save(title_arr, company_arr, location_arr, url_arr)
+  def store(title_arr, company_arr, location_arr, url_arr)
     h3 = '<h3></h3>'
     h4 = '<h4></h4>'
     line = '.............................................'

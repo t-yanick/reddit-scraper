@@ -6,9 +6,11 @@ require 'nokogiri'
 require_relative '../lib/scraper'
 require_relative '../lib/results'
 
+puts ' '
 puts 'Enter job position :'
 keyword = gets.chomp
 while keyword.empty?
+  puts ' '
   puts 'Enter a valid position:'
   keyword = gets.chomp
 end
@@ -30,5 +32,5 @@ save.end_html
 save.close_file
 
 puts "Jobs found for the position #{@array.join(' ')} are #{scraping.titles.count}"
-puts "Find a file of your search results in :"
-puts "jobs/job_listing_for_#{@array.join('_')}"
+puts 'Find a file of your search results in :'
+puts "remote_jobs/job_listing_for_#{@array.join('_')}"
