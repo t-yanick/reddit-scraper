@@ -1,7 +1,3 @@
-# rubocop : disable Layout/LineLength
-
-# frozen_string_literal: true
-
 require 'byebug'
 require 'httparty'
 require 'nokogiri'
@@ -38,5 +34,3 @@ save.close_file
 puts "#{scraping.titles.count} remote jobs have been found for the position of #{@array.join(' ')}"
 puts 'Find a file of your search results in :'
 puts "remote_jobs/job_listing_for_#{@array.join('_')}"
-
-# rubocop : enable Layout/LineLength

@@ -1,7 +1,3 @@
-# rubocop : disable Layout/LineLength
-
-# rubocop : disable Style/Documentation
-
 class Results
   attr_accessor :file
 
@@ -39,7 +35,3 @@ class Results
     @file.close
   end
 end
-
-# rubocop : enable Layout/LineLength
-
-# rubocop : enable Style/Documentation

@@ -1,7 +1,3 @@
-# rubocop : disable Layout/LineLength
-
-# rubocop : disable Style/Documentation
-
 # rubocop : disable Metrics/AbcSize
 
 # rubocop : disable Metrics/MethodLength
@@ -61,10 +57,6 @@ class Scraper
     end
   end
 end
-
-# rubocop : enable Layout/LineLength
-
-# rubocop : enable Style/Documentation
 
 # rubocop : enable Metrics/AbcSize
 
