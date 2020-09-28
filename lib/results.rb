@@ -1,14 +1,10 @@
 class Results
   attr_accessor :file
 
-  private
-
   def initialize(arr)
     prefix = './remote_jobs/job_listing_for_'
     @file = File.open(prefix + "#{arr[0]}.html", 'w+')
   end
-
-  public
 
   def begin_html
     File.open('./html/begin.txt').each do |line|
