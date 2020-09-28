@@ -27,8 +27,8 @@ puts '--------------------------------------'
 scraping = Scraper.new
 scraping.scraper(@array)
 
-# save = Results.new(@array)
-save = Results.new(scraping.scraper(@array))
+save = Results.new(@array)
+# save = Results.new(scraping.scraper(@array))
 save.begin_html
 save.store(scraping.titles, scraping.company, scraping.locations, scraping.urls)
 save.end_html
