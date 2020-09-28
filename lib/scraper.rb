@@ -36,12 +36,11 @@ class Scraper
     page = 0
     per_page = job_listings.count
     total = parsed_page.css('div.searchCountContainer').text.split(' ')[3].gsub(',', '').to_i
-    last_page = (total / per_page.to_f).round
+    last_page = ((total - 6450) / per_page.to_f).round
     while page <= last_page
     #   pagination_url = "https://www.indeed.com/jobs?q=&l=Remote&start=#{page}"
     pagination_url = "https://www.indeed.com/jobs?q=#{arr}&l=Remote&start=#{page}"
-        puts pagination_url
-        puts "page #{page}"
+     
       pagination_unparsed_page = HTTParty.get(pagination_url)
       pagination_parsed_page = Nokogiri::HTML(pagination_unparsed_page.body)
       pagination_job_listings = pagination_parsed_page.css('div.jobsearch-SerpJobCard')
@@ -61,9 +60,9 @@ class Scraper
 
         jobs << job
         puts "Added #{job[:title]}"
-        puts "Added #{job[:company]}"
-        puts "Added #{job[:location]}"
-        puts "Added #{job[:url]}"
+        puts "#{job[:company]}"
+        puts "#{job[:location]}"
+        puts "#{job[:url]}"
       end
       page += 10
 
