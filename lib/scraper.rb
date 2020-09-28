@@ -1,5 +1,13 @@
 # frozen_string_literal: true
 
+# rubocop : disable Layout/LineLength
+
+# rubocop : disable Style/Documentation
+
+# rubocop : disable Metrics/AbcSize
+
+# rubocop : disable Metrics/MethodLength
+
 require 'byebug'
 require 'httparty'
 require 'nokogiri'
@@ -23,11 +31,11 @@ class Scraper
     unparsed_page = HTTParty.get(url)
     parsed_page = Nokogiri::HTML(unparsed_page.body)
     jobs = []
-    job_listings = parsed_page.css('div.jobsearch-SerpJobCard') 
+    job_listings = parsed_page.css('div.jobsearch-SerpJobCard')
     page = 0
-    per_page = job_listings.count 
-    total = parsed_page.css('div.searchCountContainer').text.split(' ')[3].gsub(',', '').to_i 
-    last_page = (total.to_f / per_page.to_f).round 
+    per_page = job_listings.count
+    total = parsed_page.css('div.searchCountContainer').text.split(' ')[3].gsub(',', '').to_i
+    last_page = (total / per_page.to_f).round
     while page <= last_page
       pagination_url = "https://www.indeed.com/jobs?q=&l=Remote&start=#{page}"
 
@@ -39,7 +47,7 @@ class Scraper
           title: job_listing.css('a.jobtitle').text.strip.partition('/n')[0],
           company: job_listing.css('span.company').text,
           location: job_listing.css('span.location').text,
-          url: "https://indeed.com" + job_listing.css('a')[0].attributes["href"].value
+          url: 'https://indeed.com' + job_listing.css('a')[0].attributes['href'].value
         }
         if arr.all? { |x| job[:title].downcase.split.include?(x) }
           @titles << (job[:title])
@@ -51,9 +59,15 @@ class Scraper
         jobs << job
       end
       page += 10
-    
-    end
-    byebug
-  end
 
+    end
+  end
 end
+
+# rubocop : enable Layout/LineLength
+
+# rubocop : enable Style/Documentation
+
+# rubocop : enable Metrics/AbcSize
+
+# rubocop : enable Metrics/MethodLength

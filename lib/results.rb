@@ -1,3 +1,7 @@
+# rubocop : disable Layout/LineLength
+
+# rubocop : disable Style/Documentation
+
 # frozen_string_literal: true
 
 class Results
@@ -33,3 +37,7 @@ class Results
     @file.close
   end
 end
+
+# rubocop : enable Layout/LineLength
+
+# rubocop : enable Style/Documentation
