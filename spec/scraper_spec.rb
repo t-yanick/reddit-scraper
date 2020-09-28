@@ -10,5 +10,9 @@ describe Scraper do
     end
   end
 
- 
+  describe 'scraper' do
+    it 'returns false if user input is not valid' do
+      expect(input.nil?).to eql false
+    end
+  end
 end
