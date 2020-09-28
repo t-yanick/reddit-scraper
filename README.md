@@ -19,7 +19,7 @@ Web Scraping (also termed Screen Scraping, Web Data Extraction, Web Harvesting e
 - Open to the terminal on your local PC
 - Type ``` git clone ```
 - Paste the link from the repository you copied when you clicked on ```Code```
-- Type ```install bundle` to install the gems
+- Type ```bundle install` to install the gems
 - Type `cd bin` to change directory to bin
 - Type `ruby main.rb` to run the program
 
@@ -44,6 +44,21 @@ Web Scraping (also termed Screen Scraping, Web Data Extraction, Web Harvesting e
 - Ruby 2.6.5p114 (2019-10-01 revision 67812) [x86_64-darwin18]
 - Bundler
 - Linters for ruby rubocop
+
+## Running tests with Rspec
+
+This game was tested with Rspec wich is a computer domain-specific language (DSL) testing tool written in programming language Ruby to test Ruby code. It is a behavior-driven development (BDD) framework which is extensively used in production applications.
+
+## How to get Rspec running
+
+- In the terminal, type `gem install rspec`
+- Once done, go to project directory and type `rspec --init`
+- You will see a folder `spec` and a file `.rspec`
+- Inside spec folder you'll see a `spec_helper.rb` file.
+- In the terminal, type `rspec`
+
+## Rspec output
+![screenshot 1](./images/01.png)
 
 ### Authors
 👤 **Tazoh Yanick**
